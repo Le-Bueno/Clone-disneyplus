@@ -5,20 +5,29 @@
     text-align: center;
     min-height: 50vw;
 
+
+
     &__list {
         margin-top: 44px;
-        display: none;
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 24px;
+        gap: 24px;
+
+
+        @media (max-width:768px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &--is-active {
             display: grid;
+
         }
 
         &__item {
             img {
                 max-width: 100%;
                 border-radius: 4px;
+
             }
         }
     }
@@ -26,6 +35,13 @@
     &__tabs {
         display: flex;
         justify-content: center;
+
+        @media (max-width:768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 18px;
+        }
+
 
         &__button {
             color: variaveis.$corTextoSecundario;
@@ -40,6 +56,10 @@
 
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width:768px) {
+                font-size: 16px;
             }
         }
     }
